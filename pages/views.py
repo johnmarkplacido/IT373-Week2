@@ -52,12 +52,15 @@ def home(request):
 	}
 	return render(request, 'home.html', context)
 
-def about(request):
-	return render(request, 'about.html', {'title': 'About'})
-
 def announcement_list(request):
 	return render(request, 'announcement_list.html', {"announcements": TBA})
 
 def announcement(request, id):
     announcement = next((a for a in TBA if a["id"] == id), None)
     return render(request, 'announcement.html', {"announcement": announcement})
+
+def page_not_found_view(request, exception):
+    return render(request, '404.html', status=404)
+
+def server_error_view(request):
+    return render(request, '500.html', status=500)
