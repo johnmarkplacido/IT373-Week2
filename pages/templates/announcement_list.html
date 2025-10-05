@@ -3,9 +3,9 @@
 
 {% block content %}
 <h2>Announcements</h2>
-<ul>
+<ul class="list-group">
   {% for a in announcements %}
-    <li><a href="/announcement_detail/{{ a.id }}/">{{ a.title }}</a></li>
+    <li class="list-group-item"><a href="/announcement_detail/{{ a.id }}/">{{ a.title }}</a></li>
   {% endfor %}
 </ul>
 {% endblock %}
